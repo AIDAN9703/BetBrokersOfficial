@@ -1,0 +1,97 @@
+/* Container for the section */
+.section {
+    padding: 20px;
+    text-align: center;
+    background: #f8f9fa00;
+  }
+  
+  /* Title styles */
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* Content layout */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap; /* Ensure it doesn't wrap */
+    background-color: #55555500;
+}
+  
+  /* State list styles */
+  .stateList {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+  }
+  
+  .stateList h2 {
+    color: #a100ff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .stateList p {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* Enhanced state list with columns and hover effect */
+  .stateList ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .stateList li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 20px;
+    color: #979797;
+  }
+  
+  .stateList li:before {
+    content: "•";
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+  }
+  
+  .stateList li:hover {
+    color: #ffffff;
+    pointer-events: visibleFill;
+    cursor: pointer;
+  }
+  
+  /* Map styles */
+  .map {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+  }
+  
+  .mapImage {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optional: Customize the legend style */
+  .legend {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+  }
+  

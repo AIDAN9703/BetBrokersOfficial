@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Bodoni';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/BodoniModaSC.ttf') format('truetype');
+
+}
+@font-face {
+  font-family: 'MokotoGlitch';
+  src: url('/fonts/Mokoto Glitch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'YourFontName', sans-serif;
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Set background color to black */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+:root {
+  --foreground-rgb: 0,0,0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 0,0,0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .header {
+  background-color: #333333;
+}
+
+body.dark-mode .main {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .footer {
+  background-color: #333333;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+.darkModeToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.darkModeToggle:hover {
+  background-color: #555555;
+}
+/* Starfield Background */
+/* Starfield Background */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22%3E%3Cg fill=%22%23fff%22 fill-opacity=%220.5%22%3E%3Ccircle cx=%227.5%22 cy=%228.5%22 r=%221%22/%3E%3Ccircle cx=%2214.5%22 cy=%2211.5%22 r=%221%22/%3E%3Ccircle cx=%2234.5%22 cy=%2215.5%22 r=%221%22/%3E%3Ccircle cx=%2270.5%22 cy=%2216.5%22 r=%221%22/%3E%3Ccircle cx=%2284.5%22 cy=%2224.5%22 r=%221%22/%3E%3Ccircle cx=%22106.5%22 cy=%2229.5%22 r=%221%22/%3E%3Ccircle cx=%22111.5%22 cy=%2233.5%22 r=%221%22/%3E%3Ccircle cx=%2267.5%22 cy=%2234.5%22 r=%221%22/%3E%3Ccircle cx=%228.5%22 cy=%2240.5%22 r=%221%22/%3E%3Ccircle cx=%224.5%22 cy=%2247.5%22 r=%221%22/%3E%3Ccircle cx=%2291.5%22 cy=%2249.5%22 r=%221%22/%3E%3Ccircle cx=%22100.5%22 cy=%2254.5%22 r=%221%22/%3E%3Ccircle cx=%2256.5%22 cy=%2256.5%22 r=%221%22/%3E%3Ccircle cx=%22110.5%22 cy=%2258.5%22 r=%221%22/%3E%3Ccircle cx=%2240.5%22 cy=%2265.5%22 r=%221%22/%3E%3Ccircle cx=%2219.5%22 cy=%2272.5%22 r=%221%22/%3E%3Ccircle cx=%22103.5%22 cy=%2282.5%22 r=%221%22/%3E%3Ccircle cx=%2256.5%22 cy=%2284.5%22 r=%221%22/%3E%3Ccircle cx=%2265.5%22 cy=%2292.5%22 r=%221%22/%3E%3Ccircle cx=%227.5%22 cy=%2297.5%22 r=%221%22/%3E%3Ccircle cx=%2258.5%22 cy=%22103.5%22 r=%221%22/%3E%3Ccircle cx=%2258.5%22 cy=%22108.5%22 r=%221%22/%3E%3Ccircle cx=%22103.5%22 cy=%22110.5%22 r=%221%22/%3E%3Ccircle cx=%2216.5%22 cy=%22115.5%22 r=%221%22/%3E%3Ccircle cx=%2271.5%22 cy=%22117.5%22 r=%221%22/%3E%3Ccircle cx=%22113.5%22 cy=%22118.5%22 r=%221%22/%3E%3C/g%3E%3C/svg%3E');
+  animation: moveStars 140s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* Rocket Animation */
+.rocket-path {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rocket-ship {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  animation: fly 20s linear infinite, wiggle 2s ease-in-out infinite;
+  margin-left: 142px;
+  margin-top: 350px;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(100vw, 100%);
+  }
+  50% {
+    transform: translate(-100px, -50%);
+  }
+  100% {
+    transform: translate(100vw, 100%);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+

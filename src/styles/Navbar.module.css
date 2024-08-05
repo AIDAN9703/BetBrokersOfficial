@@ -1,0 +1,174 @@
+/* General Styles */
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaecec;
+  color: #000000;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logoContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 55px; /* Adjust the height as necessary */
+  width: auto;
+}
+
+.authButtons {
+  display: flex;
+}
+
+.authButtons button {
+  color: #000000;
+  border: none;
+  padding: 0.5rem .5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  height: 3px;
+  font-size: .75rem;
+}
+
+.authButtons button:hover {
+  transform: translateY(-6px);
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure elements are on top of the navbar */
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001; /* Ensure hamburger is on top of everything */
+  transition: transform 0.4s ease-in-out;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #000000;
+  margin: 3px 0;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Transformations for open state */
+.hamburger.open div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+.howItWorksButton {
+  background-color: transparent;
+  border: none;
+  color: #000000; /* Adjust the color as needed */
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 2rem;
+  transition: color 0.3s ease;
+}
+
+.howItWorksButton:hover {
+  text-decoration: underline;
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px; /* Adjust width as needed */
+  height: 100vh; /* Full height */
+  background: linear-gradient(69deg, #ffff, #e73725);
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  transform: translateX(0);
+  transition: transform 0.7s ease; /* Slide animation */
+  z-index: 999; /* Ensure it is under the navbarContainer */
+  margin-top: 59px;
+}
+
+.navbar.active {
+  transform: translateX(250px); /* Slide in when active */
+}
+
+
+@media (max-width: 768px) {
+ 
+  .navbar {
+    transform: translateY(-100%); /* Ensure it remains hidden on small screens */
+  }
+
+  .navbar.active {
+    transform: translateY(0); /* Show when active */
+  }
+
+  .logoContainer {
+    position: static; /* Make logo static on smaller screens */
+    transform: none; /* Remove centering transformation */
+  }
+
+  .authButtons {
+    display: none;
+  }
+
+  .rightContainer {
+    display: flex;
+    justify-content: space-between; /* Adjust for mobile layout */
+    width: 100%;
+  }
+
+  .howItWorksButton {
+    margin-right: 1rem; /* Adjust spacing for mobile */
+  }
+
+  .hamburger {
+    margin-right: 1rem; /* Adjust spacing for mobile */
+  }
+
+  .navLink {
+    font-size: 1rem; /* Adjust font size for mobile */
+    padding: 0.8rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    height: 50px; /* Further adjust logo size for very small screens */
+  }
+
+  .howItWorksButton {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  .navLink {
+    font-size: 0.9rem; /* Further adjust font size for nav links */
+  }
+}
